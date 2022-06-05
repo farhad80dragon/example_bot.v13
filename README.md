@@ -1,5 +1,5 @@
 # Discord Server Bot 
- 
+ Join Channel ... :/
 
 # Run Bot :
 
