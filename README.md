@@ -1,1 +1,1 @@
-# discord_server_example_bot
+# Discord Server Bot 
