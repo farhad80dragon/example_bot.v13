@@ -1,6 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const { joinVoiceChannel } = require("@discordjs/voice");
-const { token } = require('./config.json');
+const config  = require('./config.json');
 const { readdirSync } = require('fs')
 const client = new Client({
     ws: { properties: { $browser: "Discord iOS" } },
@@ -42,4 +42,4 @@ client.on('ready', () => {
 
 
 
-client.login(token);
+client.login(config.token);
