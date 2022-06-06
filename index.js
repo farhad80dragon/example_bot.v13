@@ -1,5 +1,5 @@
 const { Client, Intents } = require('discord.js');
-
+const { joinVoiceChannel } = require("@discordjs/voice");
 const { token } = require('./config.json');
 const { readdirSync } = require('fs')
 const client = new Client({
@@ -11,19 +11,35 @@ const client = new Client({
 })
 
 
+
+client.on('ready', () => {
+    function ejdeha() {
+        let dragon = [
+            `YOUR STATUS`, //enter your status
+            `🏓 Ping : ${client.ws.ping}ms` //bot ping
+        ]
+        let Power = Math.floor(Math.random() * dragon.length);
+        client.user.setActivity(dragon[Power], { type: "LISTENING" });
+    }; setInterval(ejdeha, 10000)
+    console.log(`${client.user.tag} is Online ! `)
+
+    let Channel = client.channels.cache.get(config.idchannel);
+    console.log("[CONNECTION] Connected.");
+    if (!Channel) return console.error(red("[CONNECTION] The channel does not exist!"))
+    setInterval(() => {
+        if (Channel.guild.members.cache.get(client.user.id).voice?.channelId)
+            return;
+        console.log("[CONNECTION] reconnected.");
+        const connection = joinVoiceChannel({
+            channelId: Channel.id,
+            guildId: Channel.guild.id,
+            adapterCreator: Channel.guild.voiceAdapterCreator,
+        })
+    }, 5000);
+
+});
+
+
+
+
 client.login(token);
-
-
-
-
-
-const eventFiles = readdirSync('./events').filter(file => file.endsWith('.js'));
-for (const file of eventFiles) {
-    const event = require(`./events/${file}`);
-    console.log(`[EVENT]: ${file} loaded`)
-    if (event.once) {
-        client.once(event.name, (...args) => event.execute(client, ...args));
-    } else {
-        client.on(event.name, (...args) => event.execute(client, ...args));
-    }
-}
