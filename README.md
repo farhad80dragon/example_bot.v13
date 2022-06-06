@@ -1,7 +1,21 @@
-# Discord Server Bot 
- Join Channel ... :/
+# Join Voice Channel v13
+<p align="left">
+  <img src="https://cdn.discordapp.com/attachments/980527460514930789/983358402874990612/unknown.png">
+</p>
 
-# Run Bot :
+## ✩ How To Install ⚙️
 
-1. ``Install Discord.js / Discordjs/voice / Fs``
-2. ``Set Your Token and ID Channel In Config.json ``
+```
+Enter the token and IDChannel in to The Config file
+```
+<p align="left">
+  <img src="https://cdn.discordapp.com/attachments/980527460514930789/983359247498764398/unknown.png">
+</p>
+
+
+## ✩ How To Run 🛠️
+
+```
+npm install discord.js @discordjs/voice
+
+```
