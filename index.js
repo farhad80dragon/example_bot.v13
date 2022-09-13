@@ -1,7 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const { joinVoiceChannel } = require("@discordjs/voice");
 const config  = require('./config.json');
-const { readdirSync } = require('fs')
 const client = new Client({
     ws: { properties: { $browser: "Discord iOS" } },
     intents: [
